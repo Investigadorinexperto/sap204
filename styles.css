@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  background-image: url("./assets/saturno.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.monitor {
+  margin: 5%;
+  height: 100%;
+}
+.container {
+  display: flex;
+  height: 80vh;
+}
+
+.sidebar {
+  height: 100%;
+  width: 15%;
+  padding: 20px;
+  background-color: #3d3d50;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4 ease;
+}
+.sidebar.hidden {
+  width: 0; /* Cuando el sidebar esté oculto, su ancho es 0 */
+}
+.sidebar h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.menu-item {
+  width: 50px;
+  height: 50px;
+  background-color: #888;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.1);
+}
+
+.toggle-btn {
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  height: auto;
+  transform: translateY(-50%);
+  background-color: #555;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  writing-mode: vertical-rl; /* Hace que el texto esté en vertical */
+  text-orientation: mixed; /* Ajusta la orientación del texto */
+}
+
+.main-content {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.3s ease;
+  padding: 10%;
+}
+
+.hidden-btn {
+  left: 3%;
+  opacity: 70%;
+}
+
+.hidden {
+  display: none;
+}
+
+.crocodile {
+  position: absolute;
+  bottom: 8%;
+  right: 2%;
+  width: 25vh;
+  transition: transform 0.3s ease;
+}
+
+.crocodile:hover {
+  transform: translateY(-10px);
+}

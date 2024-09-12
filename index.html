@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Interactiva</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="monitor">
+      <div class="container">
+        <!-- Panel Lateral -->
+        <div class="sidebar" id="sidebar">
+          <h2>Manos a las letras</h2>
+          <div class="menu-item" onclick="loadPage('./pages/home.html')">
+            Home
+          </div>
+          <div class="menu-item" onclick="loadPage('./pages/about.html')">
+            About
+          </div>
+          <div class="menu-item" onclick="loadPage('./pages/vlogs.html')">
+            Vlogs
+          </div>
+          <div class="menu-item" onclick="loadPage('./pages/contact.html')">
+            Contact
+          </div>
+        </div>
+        <div class="toggle-btn" id="toggleButton">Ocultar</div>
+        <!-- Área principal -->
+        <div class="main-content" id="mainContent">
+          <h1>Página principal</h1>
+          <p>contenido dinámico que cambiará según la página</p>
+          <img
+            src="./assets/cocodrilo.png"
+            alt="Cocodrilo Astronauta"
+            class="crocodile"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
