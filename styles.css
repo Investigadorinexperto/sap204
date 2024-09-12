@@ -7,7 +7,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  background-image: url("./assets/saturno.jpg");
+  background-image: url("./assets/saturno.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -23,10 +23,12 @@ body {
 
 .sidebar {
   height: 100%;
-  width: 15%;
+  width: 20%;
   padding: 20px;
-  background-color: #3d3d50;
-
+  opacity: 98%;
+  /* background-color: #3d3d50; */
+  background: linear-gradient(to right, #3d3d50ea, #3e3e52);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,10 +75,31 @@ body {
   width: 100%;
   background-color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   transition: width 0.3s ease;
-  padding: 10%;
+  padding: 5%;
+  box-shadow: 10px 5px 5px black;
+  position: relative;
+}
+.main-content h1 {
+  flex: 1 100%; /* Ocupa todo el ancho disponible */
+  text-align: left; /* Alinea el título a la izquierda */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+.main-content p {
+  font-weight: bold;
+  margin-right: 0; /* Margen derecho para el texto de "Integrantes" */
+}
+.main-content ul {
+  list-style-type: disc; /* El tipo de marcador para los ítems */
+  padding-left: 20px; /* Desplaza la lista a la derecha */
+  margin: 10px;
+}
+
+.main-content ul li {
+  margin-bottom: 10px; /* Espacio entre los elementos de la lista */
 }
 
 .hidden-btn {
@@ -90,7 +113,7 @@ body {
 
 .crocodile {
   position: absolute;
-  bottom: 8%;
+  bottom: 0;
   right: 2%;
   width: 25vh;
   transition: transform 0.3s ease;
