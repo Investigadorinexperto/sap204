@@ -58,7 +58,7 @@ body {
 
 .toggle-btn {
   position: absolute;
-  left: 15%;
+  left: 20%;
   top: 50%;
   height: auto;
   transform: translateY(-50%);
@@ -81,7 +81,7 @@ body {
   transition: width 0.3s ease;
   padding: 5%;
   box-shadow: 10px 5px 5px black;
-  position: relative;
+  /* position: relative; */
 }
 .main-content h1 {
   flex: 1 100%; /* Ocupa todo el ancho disponible */
