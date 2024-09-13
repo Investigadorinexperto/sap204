@@ -78,13 +78,6 @@ body {
     border-radius: 0%;
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 1px
-    ); /* Línea fina */
-    background-size: 100% 15px; /* Repite la línea cada 30px */
-    border: 1px solid #ccc;
   }
   100% {
     width: 100vw;
