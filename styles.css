@@ -6,16 +6,108 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
+  background-color: #3e3e52;
+}
+
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("./assets/saturno.jpeg");
   background-size: cover;
   background-position: center;
+  filter: blur(7px); /* Desenfoque aplicado a la imagen */
+  z-index: -1; /* Asegúrate de que esté detrás del contenido */
+  justify-content: center;
+  align-items: center;
 }
 
-.monitor {
-  margin: 5%;
+#intro-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté por encima de todo */
+  animation: intro-sequence 4s ease-in-out forwards; /* Controla la secuencia completa */
 }
+/* Punto blanco inicial */
+#intro-animation::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: rgb(240, 236, 236);
+  border-radius: 50%;
+  animation: expand-to-line 2s ease-in forwards; /* Transición del punto a la línea */
+}
+/* Punto se expande en una línea horizontal */
+@keyframes expand-to-line {
+  0% {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%; /* Punto inicial circular */
+  }
+  50% {
+    width: 100vw; /* Expande horizontalmente para formar una línea */
+    height: 5px;
+    border-radius: 50%; /* Mantiene el borde redondeado durante la línea */
+  }
+  75% {
+    width: 100vw; /* Comienza a expandirse completamente */
+    height: 100vh; /* Expande verticalmente */
+    border-radius: 0%; /* Elimina el borde redondeado para evitar elipse */
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    border-radius: 0%; /* Asegura que cubra completamente la pantalla */
+  }
+}
+@keyframes intro-sequence {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes float-effect {
+  0% {
+    transform: translateY(0); /* Posición inicial */
+  }
+  50% {
+    transform: translateY(-10px); /* Sube ligeramente */
+  }
+  100% {
+    transform: translateY(0); /* Vuelve a la posición inicial */
+  }
+}
+.monitor {
+  margin: 2.5%;
+  height: 100%;
+  animation: float-effect 3s ease-in-out infinite; /*Movimiento constante de flotación */
+  position: relative;
+  z-index: 1;
+  margin-top: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
 .container {
   display: flex;
   height: 80vh;
@@ -23,7 +115,7 @@ body {
 
 .sidebar {
   height: 100%;
-  width: 20%;
+  width: 23%;
   padding: 20px;
   opacity: 98%;
   /* background-color: #3d3d50; */
@@ -38,7 +130,7 @@ body {
   width: 0; /* Cuando el sidebar esté oculto, su ancho es 0 */
 }
 .sidebar h2 {
-  margin-bottom: 20px;
+  margin: 20px;
   text-align: center;
   color: #fff;
 }
@@ -58,7 +150,7 @@ body {
 
 .toggle-btn {
   position: absolute;
-  left: 20%;
+  left: 18%;
   top: 50%;
   height: auto;
   transform: translateY(-50%);
@@ -73,7 +165,7 @@ body {
 
 .main-content {
   width: 100%;
-  background-color: #fff;
+  background-color: rgb(238, 238, 238);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,7 +173,29 @@ body {
   transition: width 0.3s ease;
   padding: 5%;
   box-shadow: 10px 5px 5px black;
-  /* position: relative; */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px
+  ); /* Línea fina */
+  background-size: 100% 35px; /* Repite la línea cada 30px */
+  border: 1px solid #ccc;
+}
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 100%;
+  height: 30px;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.15) 7px,
+    transparent 6px
+  );
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  background-size: 40px 40px;
 }
 .main-content h1 {
   flex: 1 100%; /* Ocupa todo el ancho disponible */
@@ -96,6 +210,7 @@ body {
   list-style-type: disc; /* El tipo de marcador para los ítems */
   padding-left: 20px; /* Desplaza la lista a la derecha */
   margin: 10px;
+  margin-left: 20px;
 }
 
 .main-content ul li {
@@ -103,7 +218,7 @@ body {
 }
 
 .hidden-btn {
-  left: 3%;
+  left: 1%;
   opacity: 70%;
 }
 
