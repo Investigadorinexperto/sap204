@@ -38,5 +38,5 @@ window.onload = function () {
   setTimeout(function () {
     document.getElementById("intro-animation").style.display = "none"; // Oculta la animación de intro
     document.getElementById("monitor").classList.remove("hidden"); // Muestra el contenido principal
-  }, 4000); // 4 segundos
+  }, 2250); // 4 segundos
 };
